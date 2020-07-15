@@ -1,0 +1,25 @@
+
+    <p-sidebar [(visible)]="visible" styleClass="ui-sidebar-sm" [autoZIndex]="false" [modal]="false" (onHide)="hide($event)" class="movil-sidebar">
+        <div class="image-container">
+            <img src="assets/img/LaGalletada-Icono.png">
+        </div>
+        <div class="menu">
+            <p-tieredMenu [model]="items"></p-tieredMenu>
+        </div>
+        <div class="logOut-Container">
+            <button pButton type="button" label="Cerrar sesión" class="ui-button-secondary" (click)="logout()"></button>
+        </div>
+    </p-sidebar>
+
+    <div class="custom-sidebar desktop-sidebar">
+        <div class="image-container">
+            <img src="assets/img/LaGalletada-Icono.png">
+        </div>
+        <div class="menu">
+            <p-tieredMenu [model]="items"></p-tieredMenu>
+        </div>
+        <div class="logOut-Container">
+            <button pButton type="button" label="Cerrar sesión" class="ui-button-secondary" (click)="logout()"></button>
+        </div>
+    </div>
+

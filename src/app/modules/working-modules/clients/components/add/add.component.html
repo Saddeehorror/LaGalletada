@@ -1,0 +1,13 @@
+<div class="p-grid p-nogutter" >
+  <div class="p-col-12"> 
+    <app-header [header]="header"></app-header>
+  </div>
+
+  <div class="p-col 12 grid-body add-body">
+    <app-form class="form" (formdatavalue)="submit($event)"></app-form>
+  </div>
+
+</div>
+
+  <app-loading *ngIf="show"></app-loading>
+

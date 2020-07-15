@@ -1,0 +1,134 @@
+<div class="form-container">
+  <form [formGroup]="formdata" (ngSubmit)="submit()">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-card>
+          <div class="p-grid section">
+            <div class="card-header p-col-12">
+              <span>Datos personales</span>
+            </div>
+    
+            <div class="p-col-12 p-sm-6 p-md-4 p-lg-4">
+              <span class="ui-float-label">
+                <input id="name" type="text" size="30" formControlName="name"
+                [ngClass]="{'error-border':val.valid(formdata,'name',validFormBySubmit)}" pInputText> 
+                <label for="name">Nombres(s)</label>
+            </span>
+            <ng-container *ngIf="val.valid(formdata,'name',validFormBySubmit)">
+              <span *ngIf="val.validRequired(formdata,'name')" class="form-error-abs">
+                  Es requerido.
+              </span>
+          </ng-container>
+            </div>
+    
+            <div class="p-col-6 p-sm-6 p-md-4 p-lg-4">
+              <span class="ui-float-label">
+                <input id="fLastName" type="text" size="30" formControlName="fLastName"
+                [ngClass]="{'error-border':val.valid(formdata,'fLastName',validFormBySubmit)}" pInputText> 
+                <label for="fLastName">Apellido paterno</label>
+            </span>
+            <ng-container *ngIf="val.valid(formdata,'fLastName',validFormBySubmit)">
+              <span *ngIf="val.validRequired(formdata,'fLastName')" class="form-error-abs">
+                  Es requerido.
+              </span>
+          </ng-container>
+            </div>
+    
+            <div class="p-col-6 p-sm-6 p-md-4 p-lg-4">
+              <span class="ui-float-label">
+                <input id="mLastName" type="text" size="30" formControlName="mLastName"
+                [ngClass]="{'error-border':val.valid(formdata,'mLastName',validFormBySubmit)}" pInputText> 
+                <label for="mLastName">Apellido materno</label>
+            </span>
+            <ng-container *ngIf="val.valid(formdata,'mLastName',validFormBySubmit)">
+              <div class="error-container">
+                <span *ngIf="val.validRequired(formdata,'mLastName')" class="form-error-abs">
+                  Es requerido.
+              </span>
+              </div>
+          </ng-container>
+            </div>
+    
+            <div class="gender-container p-col-6 p-sm-6 p-md-4 p-lg-4">
+              <p-selectButton [options]="genders" formControlName="gender" ></p-selectButton>
+              <label>Genero</label>
+            </div>
+
+            <div class="p-col-12 p-sm-6 p-md-4 p-lg-4">
+              <span class="ui-float-label">
+                <p-inputMask mask="99/99/9999" formControlName="birthday" slotChar="dd/mm/yyyy"
+                [ngClass]="{'error-border':val.valid(formdata,'birthday',validFormBySubmit)}"></p-inputMask>
+                <!-- <input id="name" type="text" size="30" formControlName="name"
+                [ngClass]="{'error-border':val.valid(formdata,'name',validFormBySubmit)}" pInputText>  -->
+                <label for="name">Cumpleaños</label>
+            </span>
+            <ng-container *ngIf="val.valid(formdata,'name',validFormBySubmit)">
+              <span *ngIf="val.validRequired(formdata,'name')" class="form-error-abs">
+                  Es requerido.
+              </span>
+          </ng-container>
+            </div>
+            <!-- <div class="p-col-6 p-sm-6 p-md-4 p-lg-4  input-label">
+              <p-calendar  [locale]="es" dateFormat="dd/mm/yy" [yearNavigator]="true" yearRange="1000:3000" [readonlyInput]="true" formControlName="birthday"
+              [ngClass]="{'error-border-custom':val.valid(formdata,'birthday',validFormBySubmit)}"></p-calendar>
+              <label>Cumpleaños</label>
+              <ng-container *ngIf="val.valid(formdata,'birthday',validFormBySubmit)">
+                <div class="error-container">
+                  <span *ngIf="val.validRequired(formdata,'birthday')" class="form-error-abs">
+                    Es requerido.
+                </span>
+                </div>
+            </ng-container>
+            </div>
+            <p-inputMask mask="99/99/9999" [(ngModel)]="val3" placeholder="99/99/9999" slotChar="mm/dd/yyyy"></p-inputMask> -->
+
+          </div>
+      </p-card>
+      </div>
+      <div class="p-col-12">
+        <p-card>
+          <div class="p-grid section">
+            <div class="card-header p-col-12">
+              <span>Dirección</span>
+            </div>
+
+            <div class="p-col-12">
+              <app-address [parentform]="formdata.get('address')"></app-address>
+              <!-- <google-map (mapClick)="mapinfo($event)" [center]="center">
+                  <map-marker>
+
+                  </map-marker>
+              </google-map> -->
+            </div>
+
+          </div>
+
+        </p-card>
+      </div>
+      <div class="p-col-12">
+        <p-card>
+          <div class="p-grid section">
+            <div class="card-header p-col-12">
+              <span>Datos de Contacto</span>
+            </div>
+
+            <div class="p-col-12 p-sm-12 p-md-6 p-lg-6">
+              <app-email [parentform]="formdata"></app-email>
+            </div>
+
+            <div class="p-col-12 p-sm-12 p-md-6 p-lg-6">
+              <app-telephone [parentform]="formdata"></app-telephone>
+            </div>
+
+          </div>
+
+        </p-card>
+      </div>
+      <div class="p-col-12">
+        <app-form-action-buttons></app-form-action-buttons>
+      </div>
+    </div>
+
+
+  </form>
+</div>

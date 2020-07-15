@@ -1,0 +1,36 @@
+.action-buttons-container{
+    text-align: right;
+    /* padding: 10px 0 10px; */
+    margin-right: -10px;
+}
+:host::ng-deep .action-buttons-container .ui-button{
+    margin: 10px;
+    border-radius: 9px;
+}
+
+:host::ng-deep .cancel.ui-button.ui-button-text-only .ui-button-text{
+    padding: 10px 30px 10px;
+}
+:host::ng-deep .submit.ui-button.ui-button-text-only .ui-button-text{
+    padding: 10px 50px 10px;
+}
+:host::ng-deep .cancel.ui-button.ui-state-default.ui-button-secondary{
+    border-color: #561E3A !important;
+    color: #561E3A;
+}
+
+:host::ng-deep .cancel.ui-button.ui-state-default.ui-button-secondary:enabled:hover{
+    background-color: #561E3A;
+    color: #F7F7F7;
+}
+
+:host::ng-deep .submit.ui-button.ui-state-default.ui-button-secondary{
+    background-color: #E9ADC9;
+    border-color: #E9ADC9 !important;
+    color: #F7F7F7;
+}
+
+:host::ng-deep .submit.ui-button.ui-state-default.ui-button-secondary:enabled:hover{
+    background-color: #F7F7F7;
+    color: #E9ADC9;
+}

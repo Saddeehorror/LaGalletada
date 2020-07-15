@@ -1,0 +1,93 @@
+<div class="p-grid">
+  <div class="p-col-12"> 
+    <app-header [header]="header"></app-header>
+  </div>
+  <div class="p-col 12">
+    <div class="p-grid">
+      
+      <div class="p-col-4 p-sm-4 p-md-3 p-lg-2">
+        <app-add-button [label]="'Agregar Cliente'" [routing]="'add'" class="add-button"></app-add-button>
+      </div>
+
+      <div class="p-col-4 p-sm-4 p-md-3 p-lg-2">
+        <div class="sex-filter">
+          <p-selectButton [options]="sexTypes" [(ngModel)]="sexFilter"></p-selectButton>
+        </div>
+      </div>
+
+      <div class="p-col-1">
+        <div class="birthday-filter">
+          <button pButton type="button" icon="fa fa-birthday-cake" class="ui-button-secondary "></button>
+        </div>
+      </div>
+
+
+
+
+
+    <div class="p-col-12 client-table">
+
+      <!-- <p-scrollPanel [style]="{width: '100%', height: '200px'}" styleClass="custombar2"> -->
+
+
+      <p-table  [value]="clients" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width:40px"></th>
+          <th>ID</th>
+          <th colspan="3">Nombre</th>
+          <th class="desktop">Genero</th>
+          <th class="movil">G</th>
+          <th class="desktop">Bday</th>
+          <th class="desktop">Datos adicionales</th>
+          <th class="movil">Mas</th>
+          <th class="desktop">Fecha de Alta</th>
+          <th class="desktop">Acciones</th>
+          <th class="movil"></th>
+          <th class="desktop">Estatus</th>
+          <th class="movil"></th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-col let-columns="columns">
+        <tr>
+            <td class="birthday">
+              <i class="fa fa-birthday-cake" *ngIf="dates.itsBirthday(col.birthday)"></i>
+            </td>
+            <td>
+              <span>{{col.id}}</span>
+            </td>
+            <td colspan="3">
+              {{col.fullname}}
+              <!-- {{col.f_LastN}}
+              {{col.m_LastN}} -->
+            </td>
+            <td class="gender">
+              <i class="fa fa-female" *ngIf="col.gender === 'F'"></i>
+              <i class="fa fa-male" *ngIf="col.gender === 'M'"></i>
+            </td>
+            <td class="desktop">
+              {{col.birthday}}
+            </td>
+            <td>
+              <i class="fas fa-eye"></i>
+            </td>
+            <td class="desktop">
+              {{col.createDay}}<br>
+              {{col.createTime}}
+            </td>
+            <td style="text-align: center;">
+              <app-acctions></app-acctions>
+            </td>
+            <td></td>
+            <!-- {{dates.itsBirthday(col.birthday)}} -->
+        </tr>
+    </ng-template>
+</p-table>
+
+<!-- </p-scrollPanel> -->
+    </div>
+  </div>
+  </div>
+</div>

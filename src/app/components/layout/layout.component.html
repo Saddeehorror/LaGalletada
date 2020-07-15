@@ -1,0 +1,21 @@
+
+
+<!-- Column -->
+<div class="p-grid p-nogutter">
+    <!-- <div class="sidebarcontainer p-col-fixed" style="width:200px" [ngClass]="{'sidebarhide':sidebar}"> -->
+    <div class="sidebarcontainer p-sm-1 p-md-3 p-lg-2 p-nogutter">
+        <app-sidebar [visible]="sidebar"  (sidebarchange)="setsidebar($event)"></app-sidebar>
+    </div>
+    <!-- <div class="navbar-layout p-col" [ngClass]="{'navbar-layout-full':sidebar}"> -->
+        <div class="navbar-layout p-sm-12 p-md-9 p-lg-10 p-nogutter">
+        <app-navbar [visible]="sidebar" (sidebarchange)="setsidebar($event)" ></app-navbar>
+        <p-scrollPanel [style]="{width: '100%', height: 'calc(100vh - 50px)'}">
+            <router-outlet></router-outlet>
+
+        </p-scrollPanel>
+    </div>
+</div>
+
+<!-- <p-sidebar [(visible)]="sidebar" class="movil-sidebar">
+    Content
+</p-sidebar> -->

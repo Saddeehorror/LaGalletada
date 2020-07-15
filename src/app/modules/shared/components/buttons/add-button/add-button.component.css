@@ -1,0 +1,22 @@
+:host::ng-deep .ui-button{
+    width: 100%;
+    /* height: 100%; */
+    padding: 0 !important;
+}
+:host::ng-deep .ui-button.ui-state-default.ui-button-secondary{
+    color: #f4f4f4;
+    background-color: #E9ADC9;
+    border: 1px solid #E9ADC9;
+}
+
+:host::ng-deep .ui-button.ui-state-default.ui-button-secondary:enabled:hover{
+    background-color: var(--primary-purple);
+    color: #f4f4f4;
+    border-color: var(--primary-purple)
+}
+:host::ng-deep .ui-button.ui-button-text-only .ui-button-text {
+    padding: 0 !important;
+    padding: 10px 10px 10px !important;
+}
+
+/*  */

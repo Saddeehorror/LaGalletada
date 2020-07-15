@@ -1,0 +1,97 @@
+<!-- <div class="login-container grid">
+  <div class="image"></div>
+  <div class="loginform">
+    <div class="p-grid center">
+      <div class="p-col-10 p-col-align-center logo-container">
+        <img src="assets/img/imagotipo.png" class="logo">
+      </div>
+    </div>
+
+    <div class="p-grid center">
+      <div class="p-col-10 p-col-align-center" >
+        
+        <form class="p-grid" [formGroup]="formdata" (ngSubmit)="login()" >
+          
+          <div class="p-col-12 p-col-align-center email-container" >
+            <span class="ui-float-label email">
+              <input id="float-input" type="text" size="30" pInputText formControlName="username"> 
+              <label for="float-input">Correo electrónico</label>
+              <i class="fas fa-at"></i>
+            </span>
+            
+          </div>
+
+          <div class="p-col-12 p-col-align-center password-container" >
+            <span class="ui-float-label password">
+              
+              <input id="float-input" type="password" size="30" pInputText formControlName="password"> 
+              <label for="float-input">Contraseña</label>
+              <i class="fas fa-lock"></i>
+          </span>
+          </div>
+
+          <div class="p-col-12 p-col-align-center button-container" >
+            <button pButton type="submit" label="{{label}}" class="ui-button-raised" [disabled]="!formdata.valid" 
+            [ngClass]="{'button-disabled': !formdata.valid, 'button-loading': loading}" icon="fas fa-circle-notch fa-spin"></button>
+          </div>
+
+        </form>
+      
+      </div>
+    </div>
+
+    <div class="p-grid center">
+      <div class="p-col-10 p-col-align-center" >
+        <p>Politicas de privacidad Copyright 2020 SmartNode. Todos los derechos reservados.</p>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<div class="p-grid p-nogutter login-container">
+  <div class="p-sm-0 p-xl-9 p-nogutter">
+    <div class="image"></div>
+  </div>
+  <div class="p-col-12 p-sm-12 p-xl-3 p-nogutter">
+    <div class="p-grid p-nogutter">
+      <div class="p-col-10 p-offset-1 logo-container">
+        <img src="assets/img/imagotipo.png" class="logo">
+      </div>
+      <div class="p-col-10 p-offset-1">
+         
+        <form class="p-grid p-nogutter" [formGroup]="formdata " (ngSubmit)="login()" >
+
+          <div class="p-col-12 p-col-align-center email-container">
+            <span class="ui-float-label email">
+              <input id="float-input" type="text" size="30" pInputText formControlName="username"> 
+              <label for="float-input">Correo electrónico</label>
+              <i class="fas fa-at"></i>
+            </span>  
+          </div>
+
+          <div class="p-col-12 p-col-align-center password-container" >
+            <span class="ui-float-label password">
+              
+              <input id="float-input" type="password" size="30" pInputText formControlName="password"> 
+              <label for="float-input">Contraseña</label>
+              <i class="fas fa-lock"></i>
+          </span>
+          </div>
+
+          <div class="p-col-12 p-col-align-center button-container" >
+            <button pButton type="submit" label="{{label}}" class="ui-button-raised" [disabled]="!formdata.valid" 
+            [ngClass]="{'button-disabled': !formdata.valid, 'button-loading': loading}" icon="fas fa-circle-notch fa-spin"></button>
+          </div>
+          <div class="error-container">
+            <span class="error" *ngIf="show_error">
+              Correo electrónico o contraseña incorrectos.
+            </span>
+          </div>
+
+        </form>
+      
+      </div>
+    </div>
+  </div>
+</div>

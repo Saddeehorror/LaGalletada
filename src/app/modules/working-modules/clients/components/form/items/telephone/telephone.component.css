@@ -1,0 +1,19 @@
+:host::ng-deep .ui-button.ui-state-default.ui-button-secondary{
+    border-color: #BCBCBC !important;
+}
+:host::ng-deep .remove.ui-button.ui-state-default.ui-button-secondary:enabled:hover{
+    color: #c41515 !important;
+    border-color: #c41515;
+}
+:host::ng-deep .remove.ui-button-icon-only:hover .ui-button-icon-left{
+    color: #c41515 !important;
+
+}
+
+.section .p-col-1,.section .p-col-2, .section .p-col-3,
+.section .p-col-4,.section  .p-col-5, .section .p-col-6, 
+.section .p-col-7,.section .p-col-8, .section .p-col-9,
+.section .p-col-10,.section .p-col-11, .section .p-col-12 {
+    flex: 0 0 auto;
+    padding-bottom: 1.5em;
+}

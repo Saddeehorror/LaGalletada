@@ -1,0 +1,26 @@
+<div class="p-grid" [formGroup]="parentform">
+  <div class="p-col-12" formArrayName="email" *ngFor="let item of parentform.get('email').controls; let i = index">
+    <div class="p-grid section"  [formGroupName]="i">
+      <div class="p-col-10">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" formControlName="email"
+          [ngClass]="{'error-border':val.valid(parentform['controls'].email['controls'][i],'email',validFormBySubmit)}" pInputText> 
+          <label for="float-input">Correo electrónico</label>
+        </span>
+        <ng-container *ngIf="val.valid(parentform['controls'].email['controls'][i],'email',validFormBySubmit)">
+          <div class="error-container">
+            <span *ngIf="val.validRequired(parentform['controls'].email['controls'][i],'email')" class="form-error-abs">
+              Es requerido.
+          </span>
+          </div>
+      </ng-container>
+      </div>
+    
+      <div class="p-col-2 add-element">
+        <button pButton type="button" icon="fas fa-trash-alt" class="remove ui-button-secondary" *ngIf="parentform.get('email').length != i+1" (click)="removeEmail(i)"></button>
+        <button pButton type="button" icon="fas fa-plus" class="ui-button-secondary" *ngIf="parentform.get('email').length === i+1" (click)="add_email()"></button>
+      </div>
+    </div>
+
+  </div>
+</div>

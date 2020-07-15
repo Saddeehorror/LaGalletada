@@ -1,0 +1,42 @@
+<div class="p-grid" [formGroup]="parentform">
+  <div class="p-col-12" formArrayName="telephone" *ngFor="let item of parentform.get('telephone').controls; let i = index">
+    <div class="p-grid section"  [formGroupName]="i">
+      <div class="p-col-7">
+        <span class="ui-float-label dropdown-input-left">
+          <p-dropdown [options]="telephoneType" [showClear]="false" formControlName="telephoneType" (onChange)="telephoneTypeSelected($event)" 
+          [ngClass]="{'error-border-dropdown':val.valid(parentform['controls'].telephone['controls'][i],'telephoneType',validFormBySubmit)}"></p-dropdown>
+          <p-inputMask  mask="(999) 999-9999?" formControlName="telephoneNumber" 
+          [ngClass]="{'error-border-custom':val.valid(parentform['controls'].telephone['controls'][i],'telephoneNumber',validFormBySubmit)}"></p-inputMask>
+          <label for="float-input">Teléfono</label>
+        </span>
+
+        <ng-container *ngIf="val.valid(parentform['controls'].telephone['controls'][i],'telephoneType',validFormBySubmit)">
+          <div class="error-container">
+            <span *ngIf="val.validRequired(parentform['controls'].telephone['controls'][i],'telephoneType')" class="form-error-abs">
+              El tipo de telefono es requerido.
+          </span>
+          </div>
+      </ng-container>
+      <ng-container *ngIf="val.valid(parentform['controls'].telephone['controls'][i],'telephoneNumber',validFormBySubmit) && !val.valid(parentform['controls'].telephone['controls'][i],'telephoneType',validFormBySubmit)">
+        <div class="error-container">
+          <span *ngIf="val.validRequired(parentform['controls'].telephone['controls'][i],'telephoneNumber')" class="form-error-abs">
+            El numero de telefono es requerido.
+        </span>
+        </div>
+    </ng-container>
+
+      </div>
+      <div class="p-col-2 add-element">
+        <button pButton type="button" icon="fas fa-trash-alt" class="remove ui-button-secondary" *ngIf="parentform.get('telephone').length != i+1" (click)="removeTelephone(i)"></button>
+        <button pButton type="button" icon="fas fa-plus" class="ui-button-secondary" *ngIf="parentform.get('telephone').length === i+1" (click)="add_telephone()"></button>
+      </div>
+        <div class="p-col-3 p-nogutter" *ngIf="this.parentform.value.telephone[i].telephoneType === 'office'">
+          <span class="ui-float-label">
+            <input id="float-input" type="text" size="30" pInputText formControlName="extension"> 
+            <label for="float-input">Extensión</label>
+          </span>
+        </div>
+    </div>
+  </div>
+</div>
+

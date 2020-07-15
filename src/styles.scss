@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/custom-css/colors.scss";
+@import "app/custom-css/inputs.scss";
+@import "app/custom-css/buttons.scss";
+@import "app/custom-css/errors.scss";
+* {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+.ui-tieredmenu .ui-menuitem-link.ui-menuitem-link-active .ui-menuitem-text {
+    color: #E5E5E5 !important;
+}
+.ui-tieredmenu .ui-menuitem-link.ui-menuitem-link-active .ui-menuitem-icon {
+    color: #A5A4BF !important;
+}
+
+//Desactivar shadow 
+.ui-button.ui-state-default.ui-button-secondary:enabled:focus, 
+.ui-buttonset.ui-button-secondary > 
+.ui-button.ui-state-default:enabled:focus {
+    box-shadow: none !important
+}
+.ui-tieredmenu .ui-menuitem-link:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none !important;
+}
+.ui-inputtext:enabled:focus:not(.ui-state-error) {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none !important;
+    border-color: #007ad9;
+}
+
+
+
+//global table
+
+.ui-table .ui-table-thead > tr > th {
+    padding: 0.571em 0.857em;
+    border: none !important;
+    font-weight: 700;
+    color: #f7f7f7 !important;
+    background-color: #43425D !important;
+}
+.ui-table .ui-paginator-bottom {
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+table tr:last-child th:first-child {
+    border-top-left-radius: 10px !important;
+}
+
+table tr:last-child th:last-child {
+    border-top-right-radius: 10px !important;
+}
+
+
+
+// MODULOS
+.grid-body{
+    display: grid;
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    column-gap: 10px;
+    row-gap: 30px;
+}
+.add-body{
+    padding-top: 30px !important;
+}
+
+.card-header span{
+ color: #43425D;
+ font-size: 20px;
+ font-weight: 700;
+}
+
+.ui-inputtext,.ui-calendar {
+    width: 100% !important;
+}
+
+

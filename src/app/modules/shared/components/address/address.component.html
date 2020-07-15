@@ -1,0 +1,137 @@
+<div class="p-grid section" [formGroup]="parentform">
+  
+  <div class="p-col-4 p-sm-4 p-md-2 p-lg-2">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" formControlName="cp" (input)="serchZipCode($event.target.value)"
+          [ngClass]="{'error-border':val.valid(parentform,'cp',validFormBySubmit)}" pInputText> 
+          <label for="float-input">CP</label>
+        </span>
+        <ng-container *ngIf="val.valid(parentform,'cp',validFormBySubmit)">
+          <div class="error-container">
+            <span *ngIf="val.validRequired(parentform,'cp')" class="form-error-abs">
+              Es requerido.
+          </span>
+          </div>
+      </ng-container>
+  </div>
+
+<div class="p-col-8 p-sm-4 p-md-4 p-lg-4">
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" formControlName="street" 
+    [ngClass]="{'error-border':val.valid(parentform,'street',validFormBySubmit)}" pInputText> 
+    <label for="float-input">Calle</label>
+  </span>
+  <ng-container *ngIf="val.valid(parentform,'street',validFormBySubmit)">
+    <div class="error-container">
+      <span *ngIf="val.validRequired(parentform,'street')" class="form-error-abs">
+        Es requerido.
+    </span>
+    </div>
+</ng-container>
+</div>
+
+<div class="p-col-6 p-sm-4 p-md-3 p-lg-2">
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" formControlName="intNumber" 
+    [ngClass]="{'error-border':val.valid(parentform,'intNumber',validFormBySubmit)}" pInputText> 
+    <label for="float-input">Num Int</label>
+  </span>
+  <ng-container *ngIf="val.valid(parentform,'intNumber',validFormBySubmit)">
+    <div class="error-container">
+      <span *ngIf="val.validRequired(parentform,'intNumber')" class="form-error-abs">
+        Es requerido.
+    </span>
+    </div>
+</ng-container>
+</div>
+
+<div class="p-col-6 p-sm-4 p-md-3 p-lg-2">
+<span class="ui-float-label">
+  <input id="float-input" type="text" size="30" formControlName="extNumber" 
+  [ngClass]="{'error-border':val.valid(parentform,'extNumber',validFormBySubmit)}" pInputText> 
+  <label for="float-input">Num Ext</label>
+</span>
+<ng-container *ngIf="val.valid(parentform,'extNumber',validFormBySubmit)">
+  <div class="error-container">
+    <span *ngIf="val.validRequired(parentform,'extNumber')" class="form-error-abs">
+      Es requerido.
+  </span>
+  </div>
+</ng-container>
+</div>
+
+<div class="p-col-8 p-sm-4 p-md-3 p-lg-2">
+  <span class="ui-float-label">
+    <!-- <input id="float-input" type="text" size="30" formControlName="suburb" 
+    [ngClass]="{'error-border':val.valid(parentform,'suburb',validFormBySubmit)}" pInputText readonly>  -->
+    <p-dropdown [options]="suburbsData" formControlName="suburb" [filter]="true" (onChange)="setValues($event)"></p-dropdown>
+
+    <label for="float-input">Colonia</label>
+  </span>
+  <ng-container *ngIf="val.valid(parentform,'suburb',validFormBySubmit)">
+    <div class="error-container">
+      <span *ngIf="val.validRequired(parentform,'suburb')" class="form-error-abs">
+        Es requerido.
+    </span>
+    </div>
+</ng-container>
+</div>
+
+<div class="p-col-4 p-sm-4 p-md-3 p-lg-3">
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" formControlName="city" 
+    [ngClass]="{'error-border':val.valid(parentform,'city',validFormBySubmit)}" pInputText readonly> 
+    <label for="float-input">Ciudad</label>
+  </span>
+  <ng-container *ngIf="val.valid(parentform,'city',validFormBySubmit)">
+    <div class="error-container">
+      <span *ngIf="val.validRequired(parentform,'city')" class="form-error-abs">
+        Es requerido.
+    </span>
+    </div>
+</ng-container>
+</div>
+
+<div class="p-col-6 p-sm-4 p-md-3 p-lg-3">
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" formControlName="state" 
+    [ngClass]="{'error-border':val.valid(parentform,'state',validFormBySubmit)}" pInputText readonly> 
+    <label for="float-input">Estado</label>
+  </span>
+  <ng-container *ngIf="val.valid(parentform,'state',validFormBySubmit)">
+    <div class="error-container">
+      <span *ngIf="val.validRequired(parentform,'state')" class="form-error-abs">
+        Es requerido.
+    </span>
+    </div>
+</ng-container>
+</div>
+
+<div class="p-col-6 p-sm-4 p-md-3 p-lg-3">
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" formControlName="country" 
+    [ngClass]="{'error-border':val.valid(parentform,'country',validFormBySubmit)}" pInputText readonly> 
+    <label for="float-input">País</label>
+  </span>
+  <ng-container *ngIf="val.valid(parentform,'country',validFormBySubmit)">
+    <div class="error-container">
+      <span *ngIf="val.validRequired(parentform,'country')" class="form-error-abs">
+        Es requerido.
+    </span>
+    </div>
+</ng-container>
+</div>
+
+<!-- <div class="p-col-6 p-sm-4 p-md-3 p-lg-3">
+  <p-checkbox  binary="true" formControlName="coords" label="Agregar Coordenadas"></p-checkbox>
+
+</div> -->
+
+</div>
+
+<div  *ngIf="showmap" id="map"
+     leaflet
+     (leafletMapReady)="onMapReady($event)"
+     [leafletOptions]="mapOptions"
+     >
+</div>

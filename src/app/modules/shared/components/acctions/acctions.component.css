@@ -1,0 +1,12 @@
+.container{
+    position: relative;
+}
+.container i{
+    font-size: 20px;
+    cursor: pointer;
+}
+:host::ng-deep .ui-tieredmenu.ui-tieredmenu-dynamic {
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+}

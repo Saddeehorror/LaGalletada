@@ -1,0 +1,11 @@
+.header-container{
+    border-bottom: 1px solid #A5A4BF;
+}
+.header-container h1{
+    color: #43425D;
+    margin: 0;
+    padding: 0;
+}
+.header-container span{
+    font-size: 14px;
+}

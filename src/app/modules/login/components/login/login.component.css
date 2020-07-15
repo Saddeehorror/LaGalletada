@@ -1,0 +1,336 @@
+.login-container{
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+   background-color: var(--background-pink);
+}
+.image{
+  background-image: url("src/assets/img/IMG_9992.jpg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.logo-container{
+  margin-top: 30%;
+}
+.logo{
+  width: 100% !important;
+}
+.email-container{
+  padding-top: 10%;
+}
+.email-container input{
+  height: 3em;
+}
+.password-container{
+padding-top: 10%;
+}
+.password-container input{
+height: 3em;
+}
+.button-container{
+  padding-top: 15%;
+}
+.button-container button{
+    height: 3em;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+:host::ng-deep .ui-float-label i{
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 13px;
+  background-color: var(--primary-gray);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  color: var(--primary-white);
+  height: calc(100% - 2px);
+  margin-top: 1px;
+  margin-left: 1px;
+}
+:host::ng-deep .ui-float-label>label{
+  padding-left: 50px ;
+  z-index: 1;
+}
+:host::ng-deep .ui-float-label .ui-inputtext{
+  padding-left: 50px !important;
+}
+
+
+:host::ng-deep .ui-inputtext:enabled:focus:not(.ui-state-error) {
+outline: 0 none;
+outline-offset: 0;
+box-shadow: none;
+border-color: 1px solid var(--primary-purple);
+}
+
+:host::ng-deep .ui-float-label>input:focus ~ label,:host::ng-deep.ui-float-label>input.ui-state-filled ~ label{
+padding-left: 0;
+}
+
+:host::ng-deep .ui-button-text-icon-left .ui-button-icon-left{
+display: none ;
+left: 0;
+margin-left: 50%;
+}
+
+form input{
+  width: 100%;
+  border-radius: 9px;
+}
+button{
+  width: 100%;
+  background-color: var(--primary-purple);
+  border: 1px solid var(--primary-pink);
+}
+:host::ng-deep .ui-button:enabled:hover {
+  color: #ffffff;
+  background-color: var(--primary-pink);
+  border: 1px solid var(--primary-pink);
+}
+:host::ng-deep .ui-button:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0px;
+  box-shadow: none;
+}
+.button-loading{
+background-color: #F2CEDC;
+border-color: #F2CEDC;
+}
+:host::ng-deep .button-loading.ui-button:enabled:hover {
+color: #ffffff;
+background-color: #F2CEDC;
+border-color: #F2CEDC;
+}
+:host::ng-deep .button-loading.ui-button-text-icon-left .ui-button-icon-left{
+display: inline ;
+}
+
+:host::ng-deep .button-loading.ui-button .ui-button-text {
+display: none;
+}
+
+:host::ng-deep .ui-button.ui-button-text-icon-left .ui-button-text {
+  padding: 10px 10px 10px !important;
+}
+.error-container{
+  padding-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+.error{
+  font-size: 12px;
+  color: #c14151;
+}
+
+/* .login-container{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+     background-color: var(--background-pink);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    column-gap: 20px;
+    row-gap: 42.5px;
+}
+.grid>.image {
+    grid-area: 1 / 1 / 2 / 10;
+  }
+
+.grid>.loginform{
+    grid-area: 1 / 11 / 2 / 15;
+  }
+
+  .grid>.logo {
+    grid-area: 2 / 4 / 15 / 13;
+  }
+  .grid>form{
+    grid-area: 6 / 4 / 15 / 13;
+  }
+
+
+  .grid>p{
+    grid-area: 13 / 2 / 15 / 15;
+  }
+
+
+
+  .image{
+    background-image: url("src/assets/img/IMG_9992.jpg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
+  .loginform{
+      text-align: center;
+      position: relative;
+  }
+  .center{
+    justify-content: center;
+  }
+  .form{
+      width: 100%;
+  }
+
+  .logo-container{
+      padding-top: 30%;
+  }
+
+  .logo-container .logo{
+      width: 100%;
+      border-bottom: 2px solid var(--primary-gray);
+  }
+
+  form input{
+      width: 100%;
+      border-radius: 10px;
+  }
+
+  button{
+    width: 100%;
+    background-color: var(--primary-purple);
+    border: 1px solid var(--primary-pink);
+  }
+  :host::ng-deep .ui-button:enabled:hover {
+    color: #ffffff;
+    background-color: var(--primary-pink);
+    border: 1px solid var(--primary-pink);
+}
+:host::ng-deep .ui-button:enabled:focus {
+    outline: 0 none;
+    outline-offset: 0px;
+    box-shadow: none;
+}
+
+
+  .email-container{
+      padding-top: 10%;
+  }
+  .email-container input{
+      height: 3em;
+  }
+  .password-container{
+    padding-top: 5%;
+  }
+  .password-container input{
+    height: 3em;
+  }
+
+  .button-container{
+    padding-top: 15%;
+  }
+  .button-container button{
+      height: 3em;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+  }
+
+  
+
+  .relative{
+    position: relative;
+}
+  .loginform p{
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+  }
+
+
+
+  :host::ng-deep .ui-float-label i{
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 13px;
+      background-color: var(--primary-gray);
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      color: var(--primary-white);
+  }
+  :host::ng-deep .ui-float-label>label{
+      padding-left: 50px ;
+      z-index: 1;
+  }
+  :host::ng-deep .ui-float-label .ui-inputtext{
+      padding-left: 50px !important;
+  }
+
+
+  :host::ng-deep .ui-inputtext:enabled:focus:not(.ui-state-error) {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+    border-color: 1px solid var(--primary-purple);
+}
+
+:host::ng-deep .ui-float-label>input:focus ~ label,:host::ng-deep.ui-float-label>input.ui-state-filled ~ label{
+    padding-left: 0;
+}
+
+:host::ng-deep .ui-button-text-icon-left .ui-button-icon-left{
+  display: none ;
+  left: 0;
+  margin-left: 50%;
+}
+
+
+
+.button-loading{
+  background-color: #F2CEDC;
+  border-color: #F2CEDC;
+}
+:host::ng-deep .button-loading.ui-button:enabled:hover {
+  color: #ffffff;
+  background-color: #F2CEDC;
+  border-color: #F2CEDC;
+}
+:host::ng-deep .button-loading.ui-button-text-icon-left .ui-button-icon-left{
+  display: inline ;
+}
+
+:host::ng-deep .button-loading.ui-button .ui-button-text {
+  display: none;
+}
+
+@media (max-width: 576px){
+  .grid>.image {
+    grid-area: none;
+
+    }
+  
+  .grid>.loginform{
+      grid-area: 1 / 1 / 2 / 16;
+    }
+    }
+    
+  @media (min-width: 1200px){
+    .grid>.image {
+      grid-area: 1 / 1 / 2 / 10;
+    }
+  
+  .grid>.loginform{
+      grid-area: 1 / 11 / 2 / 15;
+    }
+  }
+
+ */
+
+ @media (max-width: 576px){
+    .logo-container{
+      margin-top: 0;
+    }
+  }
